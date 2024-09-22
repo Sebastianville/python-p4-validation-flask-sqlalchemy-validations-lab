@@ -56,6 +56,7 @@ class Post(db.Model):
     
     @validates('category')
     def validate_category(self, key, category):
+        # if category != 'Fiction' and category != 'Non-Fiction' it is another way to write this
         if category not in ['Fiction', 'Non-Fiction']:
             raise ValueError('Category has to be either ficiton or non-fiction')
         return category 
